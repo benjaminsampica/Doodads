@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create MediatR Command</Title>
+	  <Author>Ben Sampica</Author>
+      <Description>Generates a MediatR command with a handler</Description>
+      <Shortcut>mc</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>CommandName</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>CommandName</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Response</ID>
+          <ToolTip>Command return type</ToolTip>
+          <Default>Unit</Default>
+        </Literal>
+      </Declarations>
+      <Imports>
+        <Import>
+          <Namespace>System.Threading</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import>
+        <Import>
+          <Namespace>MediatR</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="csharp" Delimiter="$" Kind="file">
+        <![CDATA[public record $CommandName$Command : IRequest<$Response$>;
+  
+          public class $CommandName$Handler : IRequestHandler<$CommandName$Command, $Response$>
+          {
+              public $CommandName$Handler()
+              {
+              }
+  
+              public async Task<$Response$> Handle($CommandName$Command command, CancellationToken cancellationToken)
+              {
+                  throw new NotImplementedException();
+              }
+          }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create MediatR Query</Title>
+      <Description>Generates a MediatR query with a handler</Description>
+      <Shortcut>mq</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>QueryName</ID>
+          <ToolTip>Query name</ToolTip>
+          <Default>QueryName</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Response</ID>
+          <ToolTip>Query return type</ToolTip>
+          <Default>Unit</Default>
+        </Literal>
+      </Declarations>
+      <Imports>
+        <Import>
+          <Namespace>System.Threading</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import>
+        <Import>
+          <Namespace>MediatR</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="csharp" Delimiter="$" Kind="file">
+        <![CDATA[public record $QueryName$Query : IRequest<$Response$>;
+  
+          public class $QueryName$Handler : IRequestHandler<$QueryName$Query, $Response$>
+          {
+              public $QueryName$Handler()
+              {
+              }
+  
+              public async Task<$Response$> Handle($QueryName$Query query, CancellationToken cancellationToken)
+              {
+                  throw new NotImplementedException();
+              }
+          }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
