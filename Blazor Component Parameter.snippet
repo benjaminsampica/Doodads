@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Blazor Component Parameter</Title>
+            <Author>Ben Sampica</Author>
+            <Description>Creates a Blazor component parameter.</Description>
+            <Shortcut>prmbl</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[[Parameter, EditorRequired] public $Type$ $Name$ { get; set;} = null!;$end$]]>
+            </Code>
+            <Declarations>
+                <Literal>
+                    <ID>Type</ID>
+                    <ToolTip>Choose the type for the parameter.</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>Name</ID>
+                    <ToolTip>Choose the name for the parameter.</ToolTip>
+                    <Default>Name</Default>
+                </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

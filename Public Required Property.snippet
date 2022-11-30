@@ -2,25 +2,25 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
     <CodeSnippet Format="1.0.0">
         <Header>
-            <Title>Blazor Inject Service</Title>
+            <Title>Public Required property</Title>
             <Author>Ben Sampica</Author>
-            <Description>Creates a Blazor-injected service.</Description>
-            <Shortcut>svcbl</Shortcut>
+            <Description>Creates a public required property.</Description>
+            <Shortcut>propr</Shortcut>
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[[Inject] private $Type$ $Name$ { get; set;} = null!;$end$]]>
+                <![CDATA[public required $Type$ $Name$ { get; set; }$end$]]>
             </Code>
             <Declarations>
                 <Literal>
                     <ID>Type</ID>
-                    <ToolTip>Choose the type for the service.</ToolTip>
-                    <Default>IService</Default>
+                    <ToolTip>Choose the type for the property.</ToolTip>
+                    <Default>string</Default>
                 </Literal>
                 <Literal>
                     <ID>Name</ID>
-                    <ToolTip>Choose the name for the service.</ToolTip>
-                    <Default>MyService</Default>
+                    <ToolTip>Choose the name for the property.</ToolTip>
+                    <Default>Name</Default>
                 </Literal>
             </Declarations>
         </Snippet>
