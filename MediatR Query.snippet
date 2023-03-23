@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-  <CodeSnippet Format="1.0.0">
-    <Header>
-      <SnippetTypes>
-        <SnippetType>Expansion</SnippetType>
-      </SnippetTypes>
-      <Title>Create MediatR Query</Title>
-      <Author>Ben Sampica</Author>
-      <Description>Generates a MediatR query with a handler</Description>
-      <Shortcut>mq</Shortcut>
-    </Header>
-    <Snippet>
-      <Declarations>
-        <Literal Editable="true">
-          <ID>QueryName</ID>
-          <ToolTip>Query name</ToolTip>
-          <Default>QueryName</Default>
-        </Literal>
-        <Literal Editable="true">
-          <ID>Response</ID>
-          <ToolTip>Query return type</ToolTip>
-        </Literal>
-      </Declarations>
-      <Code Language="csharp" Delimiter="$" Kind="file">
-        <![CDATA[public record $QueryName$Query : IRequest<$Response$QueryResponse>;
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+			<Title>Create MediatR Query</Title>
+			<Author>Ben Sampica</Author>
+			<Description>Generates a MediatR query with a handler</Description>
+			<Shortcut>mq</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>QueryName</ID>
+					<ToolTip>Query name</ToolTip>
+					<Default>QueryName</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp" Delimiter="$" Kind="file">
+				<![CDATA[public record $QueryName$Query : IRequest<$QueryName$QueryResponse>;
   
-          public class $QueryName$QueryHandler : IRequestHandler<$QueryName$Query, $Response$QueryResponse>
+          public class $QueryName$QueryHandler : IRequestHandler<$QueryName$Query, $QueryName$QueryResponse>
           {
               public $QueryName$QueryHandler()
               {
               }
   
-              public async Task<$Response$QueryResponse> Handle($QueryName$Query query, CancellationToken cancellationToken)
+              public async Task<$QueryName$QueryResponse> Handle($QueryName$Query query, CancellationToken cancellationToken)
               {
                   throw new NotImplementedException();
               }
@@ -41,7 +37,7 @@
 		  {
 		        public IEnumerable<T> Items { get; set; } = Array.Empty<T>();
 		  }]]>
-      </Code>
-    </Snippet>
-  </CodeSnippet>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
 </CodeSnippets>
