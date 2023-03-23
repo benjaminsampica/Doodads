@@ -17,22 +17,17 @@
           <ToolTip>Command name</ToolTip>
           <Default>CommandName</Default>
         </Literal>
-        <Literal Editable="true">
-          <ID>Response</ID>
-          <ToolTip>Command return type</ToolTip>
-          <Default>Unit</Default>
-        </Literal>
       </Declarations>
       <Code Language="csharp" Delimiter="$" Kind="file">
-        <![CDATA[public record $CommandName$Command : IRequest<$Response$>;
+        <![CDATA[public record $CommandName$Command : IRequest;
   
-          public class $CommandName$Handler : IRequestHandler<$CommandName$Command, $Response$>
+          public class $CommandName$CommandHandler : IRequestHandler<$CommandName$Command>
           {
-              public $CommandName$Handler()
+              public $CommandName$CommandHandler()
               {
               }
   
-              public async Task<$Response$> Handle($CommandName$Command command, CancellationToken cancellationToken)
+              public async Task Handle($CommandName$Command command, CancellationToken cancellationToken)
               {
                   throw new NotImplementedException();
               }
