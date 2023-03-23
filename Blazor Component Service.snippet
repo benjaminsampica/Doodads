@@ -9,17 +9,12 @@
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[[Inject] private $Type$ $Name$ { get; set;} = null!;$end$]]>
+                <![CDATA[[Inject] private I$Type$ $Type$ { get; set;} = null!;$end$]]>
             </Code>
             <Declarations>
                 <Literal>
                     <ID>Type</ID>
-                    <ToolTip>Choose the type for the service.</ToolTip>
-                    <Default>IService</Default>
-                </Literal>
-                <Literal>
-                    <ID>Name</ID>
-                    <ToolTip>Choose the name for the service.</ToolTip>
+                    <ToolTip>Choose the type and name for the service.</ToolTip>
                     <Default>Service</Default>
                 </Literal>
             </Declarations>
