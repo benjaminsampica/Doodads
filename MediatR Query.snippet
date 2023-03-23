@@ -37,7 +37,10 @@
               }
           }
 		  
-		  public record $QueryName$QueryResponse : IRequest<$Response$>;]]>
+		  public record $QueryName$QueryResponse 
+		  {
+		        public IEnumerable<T> Items { get; set; } = Array.Empty<T>();
+		  }]]>
       </Code>
     </Snippet>
   </CodeSnippet>
